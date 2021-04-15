@@ -1,0 +1,34 @@
+{
+    "name": "hass_netatalk",
+    "version": "10",
+    "slug": "hassnetatalk",
+    "description": "Expose Home Assistant disc by netatalk",
+    "url": "https://github.com/dmslabsbr",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "application",
+    "stage": "experimental",
+    "boot": "auto",
+    "init": false,
+    "host_network": true,
+    "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw", "media:rw"],
+    "privileged": ["SYS_ADMIN", "SYS_RAWIO", "SYS_RESOURCE", "SYS_MODULE"],
+    "hassio_role": "default",
+    "panel_admin": false,
+    "usb": true,
+    "kernel_modules": true,
+    "options": {
+        "HOYMILES_USER": "HOYMILES_USER"
+    },
+    "schema": {
+        "HOYMILES_USER": "str"
+    },
+    "ports": {
+        "548/tcp": 548
+    },
+    "devicetree": true,
+    "udev": true,
+    "host_dbus": true,
+    "full_access": true,
+    "apparmor": false,
+    "host_ipc": true
+}
